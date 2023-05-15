@@ -1,0 +1,13 @@
+
+
+<div *ngFor="let meme of memes$">
+  <div>{{ meme.attributes.name }}</div>
+  <img [src]="baseUrl + meme.attributes.image.data[0].attributes.url" />
+</div>
+
+<div *ngFor="let meme of memes$">
+  <pre>{{
+    meme.attributes.image.data[0].attributes.formats.thumbnail.url | json
+  }}</pre>
+  <img [src]="meme.attributes.image.data[0].attributes.url" >
+</div>
